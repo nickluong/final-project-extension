@@ -1,15 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+  "manifest_version": 2,
+
+  "name": "Dolphin Extension",
+  "description": "This extension is a starting point to create a real Chrome extension",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "http://localhost:3004/*"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "version": "0.0.1",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "icons": {
+    "16": "dolphin.png",
+    "48": "dolphin.png",
+    "128": "dolphin.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
 }
