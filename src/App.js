@@ -50,11 +50,7 @@ class App extends Component {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       chrome.tabs.executeScript(tabs[0].id, {
         code: `
-             function sleep(ms) {
-              return new Promise(resolve => setTimeout(resolve, ms));
-            };
               if(document.getElementsByClassName('touchable PlayerControls--control-element nfp-button-control default-control-button button-nfplayerPlay')[0]){
-                sleep(3000)
                 document.getElementsByClassName('touchable PlayerControls--control-element nfp-button-control default-control-button button-nfplayerPlay')[0].click();
               }
                else if(document.getElementsByClassName("touchable PlayerControls--control-element nfp-button-control default-control-button button-nfplayerPause")[0]){
